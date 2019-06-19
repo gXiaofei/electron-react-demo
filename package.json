@@ -82,7 +82,7 @@
   "build": {
     "productName": "electron-react",
     "appId": "electron-react",
-    "asar": false,
+    "asar": true,
     "files": [
       "package.json",
       "main.js",

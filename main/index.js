@@ -17,9 +17,6 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 800,
-    transparent: true,
-    titleBarStyle: 'hidden',
-    frame: false
   });
   mainWindow.loadURL(getRenderUrl());
   if (process.platform === 'win32') {
