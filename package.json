@@ -1,15 +1,15 @@
 {
   "name": "electron-react",
-  "version": "1.1.7",
+  "version": "1.1.6",
   "description": "electron-react脚手架工程",
   "main": "main.js",
   "build-config": {
     "appid": "001",
     "version": "001",
-    "env": "development"
+    "env": "production"
   },
   "scripts": {
-    "start": "npm run compile-main && cross-env NODE_ENV=development node ./scripts/server.js",
+    "start": "npm run compile && cross-env NODE_ENV=development node ./scripts/server.js",
     "clean": "rm -rf dist && rm -rf render_process && rm -rf main_process",
     "eslint": "echo \"代码检测中...\" && eslint  *.js --cache",
     "eslint-fix": "npm run --silent eslint -- --fix; exit 0",
@@ -72,6 +72,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
+    "electron-updater": "^4.0.6",
     "fs-extra": "^5.0.0",
     "getmac": "^1.4.1",
     "md5-file": "^3.2.3",
@@ -82,7 +83,7 @@
   "build": {
     "productName": "electron-react",
     "appId": "electron-react",
-    "asar": true,
+    "asar": false,
     "files": [
       "package.json",
       "main.js",
@@ -90,6 +91,12 @@
       "render_process/",
       "node_modules/",
       "icon.ico"
+    ],
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://127.0.0.1:8080/"
+      }
     ],
     "npmRebuild": false,
     "dmg": {
